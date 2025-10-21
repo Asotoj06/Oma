@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ōmha - Alta cocina en Tijuana. Chef Erick Sáenz con 20 años de experiencia y 8 años en restaurantes Michelin presenta cocina de excelencia con ingredientes de Baja California.">
+    <meta name="keywords" content="alta cocina, Tijuana, Michelin, Chef Erick Sáenz, restaurante gourmet, fine dining, Baja California, gastronomía Tijuana">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Ōmha - Alta Cocina Tijuana | Chef Erick Sáenz">
+    <meta property="og:description" content="Alta cocina en Tijuana por Chef con 20 años de experiencia y 8 años en restaurantes Michelin">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://omhatijuana.com">
+
+    <title>Ōmha - Alta Cocina Tijuana | Chef Erick Sáenz</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;500&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Ōmha",
+      "image": "",
+      "description": "Alta cocina en Tijuana por Chef Erick Sáenz con 20 años de experiencia gastronómica y 8 años en restaurantes Michelin. Técnicas de alta cocina internacional con ingredientes de Baja California.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "Tijuana",
+        "addressRegion": "Baja California",
+        "addressCountry": "MX"
+      },
+      "telephone": "664-546-8978",
+      "servesCuisine": ["Contemporary", "Fine Dining", "Baja California"],
+      "priceRange": "$$$$",
+      "chef": {
+        "@type": "Person",
+        "name": "Erick Sáenz",
+        "jobTitle": "Chef",
+        "description": "Chef con 20 años de experiencia gastronómica, 8 años en restaurantes Michelin, graduado con honores de San Francisco Culinary Academy"
+      }
+    }
+    </script>
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- Fixed Navigation (appears on scroll) -->
+    <nav class="main-nav" id="mainNav" aria-label="Navegación principal">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo" aria-label="Volver al inicio">Ōmha</a>
+
+            <!-- Desktop Navigation -->
+            <div class="nav-links desktop-nav">
+                <a href="#filosofia">FILOSOFÍA</a>
+                <span class="nav-separator">|</span>
+                <a href="#chef">CHEF</a>
+                <span class="nav-separator">|</span>
+                <a href="#contacto">CONTACTO</a>
+            </div>
+
+            <!-- Mobile Hamburger -->
+            <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu" id="mobileMenu">
+            <button class="close-menu" id="closeMenu" aria-label="Cerrar menú">×</button>
+            <div class="mobile-menu-links">
+                <a href="#filosofia" class="mobile-link">FILOSOFÍA</a>
+                <a href="#chef" class="mobile-link">CHEF</a>
+                <a href="#contacto" class="mobile-link">CONTACTO</a>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-logo">Ōmha</h1>
+                <p class="hero-chef">CHEF ERICK SÁENZ</p>
+                <p class="hero-award">20 AÑOS DE EXPERIENCIA GASTRONÓMICA</p>
+                <p class="hero-subtitle">ALTA COCINA EN TIJUANA</p>
+                <a href="#contacto" class="cta-button" aria-label="Hacer una reservación">RESERVAR</a>
+            </div>
+            <div class="scroll-indicator" id="scrollIndicator" aria-label="Desplazarse hacia abajo">
+                <span>↓</span>
+            </div>
+        </section>
+
+        <!-- Filosofía Section -->
+        <section id="filosofia" class="filosofia-section section-animate">
+            <div class="section-container">
+                <h2 class="section-header">LA EXPERIENCIA</h2>
+                <p class="filosofia-text">
+                    En Ōmha, la alta cocina se fusiona con la innovación y la tradición. El Chef Erick Sáenz,
+                    con dos décadas de experiencia gastronómica, crea experiencias culinarias únicas que celebran
+                    los ingredientes más frescos de Baja California. Cada platillo es una expresión de compromiso
+                    y excelencia, donde técnicas internacionales de alta cocina se encuentran con la riqueza de
+                    nuestra región. Experimenta el equilibrio perfecto entre dedicación, creatividad y sabor.
+                </p>
+                <div class="filosofia-images">
+                    <img src="https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=800&h=533&fit=crop&q=80"
+                         alt="Plato de alta cocina con ingredientes frescos de Baja California"
+                         class="filosofia-img"
+                         loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&h=533&fit=crop&q=80"
+                         alt="Ingredientes frescos y preparación de alta cocina"
+                         class="filosofia-img"
+                         loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- Chef Section -->
+        <section id="chef" class="chef-section section-animate">
+            <div class="section-container">
+                <div class="chef-grid">
+                    <div class="chef-photo">
+                        <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=600&h=800&fit=crop&q=80"
+                             alt="Chef Erick Sáenz en la cocina"
+                             class="chef-img"
+                             loading="lazy">
+                    </div>
+                    <div class="chef-bio">
+                        <h2 class="section-header">EL CHEF</h2>
+                        <h3 class="chef-name">CHEF ERICK SÁENZ</h3>
+                        <p class="chef-award-text">8 AÑOS EN RESTAURANTES MICHELIN • 20 AÑOS DE EXPERIENCIA</p>
+                        <p class="chef-description">
+                            Graduado con honores de la San Francisco Culinary Academy, el Chef Erick Sáenz
+                            cuenta con más de 20 años de experiencia en el mundo de la gastronomía. Su trayectoria
+                            incluye 8 años trabajando en restaurantes con estrellas Michelin y 6 años como parte
+                            de equipos campeones de gastronomía en Estados Unidos. Con estudios continuos en
+                            The American Culinary Federation y Top Chef Universidad, el Chef Sáenz aplica su
+                            filosofía fundamental: "La alta cocina exige compromiso, no solo pasión." En Ōmha,
+                            fusiona técnicas de alta cocina internacional con los ingredientes más finos de
+                            Baja California, creando experiencias culinarias únicas e inolvidables.
+                        </p>
+                    </div>
+                </div>
+                <blockquote class="chef-quote">
+                    <p>"La alta cocina exige compromiso, no solo pasión. Cada platillo es una expresión de dedicación y excelencia."</p>
+                </blockquote>
+            </div>
+        </section>
+
+        <!-- Contacto Section -->
+        <section id="contacto" class="contacto-section section-animate">
+            <div class="section-container contacto-content">
+                <div class="contact-info">
+                    <p class="contact-label">UBICACIÓN</p>
+                    <p class="restaurant-name">Ōmha</p>
+                    <p class="contact-detail">Avenida Revolución 1234</p>
+                    <p class="contact-detail">Zona Centro, Tijuana, B.C.</p>
+                    <p class="contact-detail">México, 22000</p>
+                </div>
+
+                <div class="contact-info">
+                    <p class="contact-label">TELÉFONO</p>
+                    <a href="tel:6645468978" class="contact-phone">664 546 8978</a>
+                </div>
+
+                <div class="contact-info">
+                    <p class="contact-label">HORARIO</p>
+                    <p class="contact-detail">Martes - Sábado</p>
+                    <p class="contact-detail">18:00 - 23:00</p>
+                    <p class="contact-detail">Domingo - Lunes: Cerrado</p>
+                </div>
+
+                <a href="tel:6645468978" class="cta-button reserve-button">RESERVAR</a>
+
+                <a href="https://instagram.com/omhatijuana" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Visitar Instagram">
+                    <svg class="instagram-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" fill="currentColor"/>
+                    </svg>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Ōmha Tijuana</p>
+        <p>Todos los derechos reservados</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

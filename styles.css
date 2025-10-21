@@ -1,0 +1,862 @@
+/* ============================================
+   CSS VARIABLES - COLOR PALETTE & TYPOGRAPHY
+   ============================================ */
+:root {
+    /* Primary Colors */
+    --black-primary: #000000;
+    --charcoal-dark: #1A1A1A;
+    --graphite: #2C2C2C;
+
+    /* Metallic Accents */
+    --platinum: #E5E4E2;
+    --warm-silver: #C0C0C0;
+    --metallic-gold: #C9A961;
+
+    /* Natural Accents */
+    --warm-wood: #8B7355;
+    --deep-brown: #4A3728;
+    --soft-cream: #F5F5DC;
+
+    /* Typography */
+    --font-serif: 'Cormorant Garamond', serif;
+    --font-sans: 'Inter', sans-serif;
+
+    /* Timing */
+    --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================================
+   RESET & GLOBAL STYLES
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    background-color: var(--black-primary);
+    color: var(--warm-silver);
+    font-family: var(--font-sans);
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+/* Skip Link for Accessibility */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--metallic-gold);
+    color: var(--black-primary);
+    padding: 8px 16px;
+    text-decoration: none;
+    font-weight: 600;
+    z-index: 10000;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Typography Base Styles */
+h1, h2, h3 {
+    font-family: var(--font-serif);
+    color: var(--platinum);
+    font-weight: 300;
+}
+
+h1 {
+    font-size: 72px;
+    letter-spacing: 0.1em;
+}
+
+h2 {
+    font-size: 48px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+}
+
+h3 {
+    font-family: var(--font-sans);
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--warm-silver);
+    letter-spacing: 0.05em;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ============================================
+   NAVIGATION
+   ============================================ */
+.main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: all 0.4s var(--transition-smooth);
+}
+
+.main-nav.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.nav-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    height: 100%;
+    padding: 0 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-family: var(--font-serif);
+    font-size: 24px;
+    color: var(--platinum);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.nav-logo:hover {
+    color: var(--metallic-gold);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+.nav-links a {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--platinum);
+    padding: 0 16px;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.nav-links a:hover {
+    color: var(--metallic-gold);
+}
+
+.nav-separator {
+    color: var(--warm-silver);
+    opacity: 0.5;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1001;
+}
+
+.hamburger-line {
+    width: 24px;
+    height: 2px;
+    background-color: var(--warm-silver);
+    transition: all 0.3s ease;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background: var(--black-primary);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    transition: right 0.4s var(--transition-smooth);
+}
+
+.mobile-menu.active {
+    right: 0;
+}
+
+.close-menu {
+    position: absolute;
+    top: 20px;
+    right: 5%;
+    background: none;
+    border: none;
+    color: var(--platinum);
+    font-size: 48px;
+    cursor: pointer;
+    font-weight: 300;
+    line-height: 1;
+}
+
+.mobile-menu-links {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+}
+
+.mobile-link {
+    font-size: 24px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--platinum);
+    transition: color 0.3s ease;
+}
+
+.mobile-link:hover {
+    color: var(--metallic-gold);
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--black-primary);
+    background-image: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&q=80&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    padding: 40px 5%;
+    opacity: 0;
+    animation: fadeInHero 1.5s ease forwards;
+}
+
+/* Dark overlay for text readability */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.7) 0%,
+        rgba(0, 0, 0, 0.6) 50%,
+        rgba(0, 0, 0, 0.8) 100%
+    );
+    z-index: 1;
+}
+
+@keyframes fadeInHero {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.hero-content {
+    text-align: center;
+    opacity: 0;
+    animation: slideUpFadeIn 1.5s ease 0.3s forwards;
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes slideUpFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-logo {
+    font-size: 96px;
+    font-family: var(--font-serif);
+    font-weight: 300;
+    color: var(--platinum);
+    letter-spacing: 0.1em;
+    margin-bottom: 40px;
+}
+
+.hero-chef {
+    font-size: 20px;
+    font-family: var(--font-sans);
+    font-weight: 400;
+    color: var(--warm-silver);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 16px;
+}
+
+.hero-award {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--metallic-gold);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 20px;
+}
+
+.hero-subtitle {
+    font-size: 24px;
+    font-family: var(--font-sans);
+    font-weight: 300;
+    color: var(--platinum);
+    letter-spacing: 0.08em;
+    margin-bottom: 60px;
+}
+
+/* CTA Button */
+.cta-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #C9A961, #B8935A);
+    color: var(--black-primary);
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 16px 48px;
+    border-radius: 2px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s var(--transition-smooth);
+    font-family: var(--font-sans);
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 30px rgba(201, 169, 97, 0.4);
+}
+
+.cta-button:focus {
+    outline: 2px solid var(--platinum);
+    outline-offset: 4px;
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    color: var(--platinum);
+    cursor: pointer;
+    animation: bounce 2s infinite;
+    z-index: 2;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+/* ============================================
+   SECTION ANIMATIONS
+   ============================================ */
+.section-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s var(--transition-smooth),
+                transform 0.8s var(--transition-smooth);
+}
+
+.section-animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* ============================================
+   FILOSOFÍA SECTION
+   ============================================ */
+.filosofia-section {
+    background-color: var(--charcoal-dark);
+    padding: 120px 15%;
+}
+
+.filosofia-text {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 60px;
+    color: var(--warm-silver);
+}
+
+.filosofia-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.filosofia-img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 3/2;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+    transition: all 0.4s var(--transition-smooth);
+}
+
+.filosofia-img:hover {
+    transform: scale(1.05);
+    filter: brightness(110%);
+}
+
+/* Legacy placeholder styles (for reference) */
+.image-placeholder {
+    aspect-ratio: 3/2;
+    background-color: var(--graphite);
+    border-radius: 4px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s var(--transition-smooth);
+    overflow: hidden;
+}
+
+.image-placeholder:hover {
+    transform: scale(1.05);
+    filter: brightness(110%);
+}
+
+.placeholder-text {
+    color: var(--warm-wood);
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    opacity: 0.5;
+}
+
+/* ============================================
+   CHEF SECTION
+   ============================================ */
+.chef-section {
+    background-color: var(--black-primary);
+    padding: 120px 15%;
+}
+
+.chef-grid {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    gap: 60px;
+    margin-bottom: 80px;
+    align-items: center;
+}
+
+.chef-photo {
+    width: 100%;
+}
+
+.chef-img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+    transition: all 0.4s var(--transition-smooth);
+}
+
+.chef-img:hover {
+    transform: scale(1.02);
+    filter: brightness(105%);
+}
+
+.chef-photo .image-placeholder {
+    aspect-ratio: 3/4;
+}
+
+.chef-bio {
+    padding-left: 60px;
+}
+
+.chef-name {
+    margin-bottom: 16px;
+}
+
+.chef-award-text {
+    color: var(--metallic-gold);
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 24px;
+}
+
+.chef-description {
+    color: var(--warm-silver);
+    line-height: 1.8;
+}
+
+.chef-quote {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.chef-quote p {
+    font-family: var(--font-serif);
+    font-size: 28px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--warm-silver);
+    line-height: 1.6;
+}
+
+.chef-quote p::before,
+.chef-quote p::after {
+    content: '"';
+    font-size: 40px;
+    color: var(--metallic-gold);
+}
+
+/* ============================================
+   CONTACTO SECTION
+   ============================================ */
+.contacto-section {
+    background-color: var(--charcoal-dark);
+    padding: 120px 15%;
+}
+
+.contacto-content {
+    text-align: center;
+}
+
+.contact-info {
+    margin-bottom: 48px;
+}
+
+.contact-label {
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--warm-wood);
+    letter-spacing: 0.2em;
+    margin-bottom: 16px;
+}
+
+.restaurant-name {
+    font-family: var(--font-serif);
+    font-size: 36px;
+    color: var(--platinum);
+    margin-bottom: 8px;
+}
+
+.contact-detail {
+    font-size: 18px;
+    color: var(--warm-silver);
+    margin-bottom: 4px;
+}
+
+.contact-phone {
+    font-size: 20px;
+    color: var(--metallic-gold);
+    font-weight: 400;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.contact-phone:hover {
+    transform: scale(1.05);
+}
+
+.reserve-button {
+    margin-top: 48px;
+    margin-bottom: 40px;
+}
+
+.social-link {
+    display: inline-block;
+    margin-top: 40px;
+    color: var(--warm-silver);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-link:hover {
+    color: var(--metallic-gold);
+    transform: scale(1.1);
+}
+
+.instagram-icon {
+    width: 32px;
+    height: 32px;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+    background-color: var(--black-primary);
+    padding: 40px 5%;
+    text-align: center;
+}
+
+.footer p {
+    font-size: 12px;
+    color: var(--warm-wood);
+    line-height: 1.6;
+}
+
+.footer p:first-child {
+    margin-bottom: 8px;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - TABLET
+   ============================================ */
+@media (max-width: 1023px) {
+    h1 {
+        font-size: 56px;
+    }
+
+    h2 {
+        font-size: 40px;
+    }
+
+    h3 {
+        font-size: 28px;
+    }
+
+    .hero-logo {
+        font-size: 72px;
+    }
+
+    .filosofia-section,
+    .chef-section,
+    .contacto-section {
+        padding: 100px 10%;
+    }
+
+    .chef-grid {
+        gap: 40px;
+    }
+
+    .chef-bio {
+        padding-left: 40px;
+    }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - MOBILE
+   ============================================ */
+@media (max-width: 767px) {
+    /* Typography */
+    h1 {
+        font-size: 48px;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    /* Navigation */
+    .desktop-nav {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    /* Hero Section */
+    .hero-logo {
+        font-size: 56px;
+        margin-bottom: 24px;
+    }
+
+    .hero-chef {
+        font-size: 16px;
+    }
+
+    .hero-award {
+        font-size: 14px;
+    }
+
+    .hero-subtitle {
+        font-size: 20px;
+        margin-bottom: 40px;
+    }
+
+    .cta-button {
+        width: 90%;
+        max-width: 320px;
+        padding: 16px 32px;
+        font-size: 13px;
+    }
+
+    /* Sections */
+    .filosofia-section,
+    .chef-section,
+    .contacto-section {
+        padding: 80px 5%;
+    }
+
+    .section-header {
+        margin-bottom: 32px;
+    }
+
+    /* Filosofía */
+    .filosofia-text {
+        margin-bottom: 40px;
+    }
+
+    .filosofia-images {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* Chef */
+    .chef-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin-bottom: 60px;
+    }
+
+    .chef-bio {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .chef-quote p {
+        font-size: 22px;
+    }
+
+    /* Contact */
+    .contact-info {
+        margin-bottom: 40px;
+    }
+
+    .restaurant-name {
+        font-size: 28px;
+    }
+
+    .contact-phone {
+        font-size: 18px;
+    }
+
+    .reserve-button {
+        width: 90%;
+        max-width: 320px;
+    }
+
+    /* Scroll Indicator */
+    .scroll-indicator {
+        bottom: 20px;
+        font-size: 20px;
+    }
+}
+
+/* ============================================
+   ACCESSIBILITY & PERFORMANCE
+   ============================================ */
+
+/* Reduced Motion for Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .scroll-indicator {
+        animation: none;
+    }
+}
+
+/* Focus Styles for Keyboard Navigation */
+a:focus,
+button:focus {
+    outline: 2px solid var(--platinum);
+    outline-offset: 4px;
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    :root {
+        --warm-silver: #FFFFFF;
+        --platinum: #FFFFFF;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .main-nav,
+    .scroll-indicator,
+    .cta-button,
+    .hamburger,
+    .mobile-menu {
+        display: none;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+}

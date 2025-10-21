@@ -1,0 +1,38 @@
+# Ōmha Website - Git Ignore File
+
+# System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor directories and files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+
+# Dependency directories (if you add build tools later)
+node_modules/
+dist/
+
+# Environment variables (if you add any)
+.env
+.env.local
+
+# Temporary files
+*.tmp
+.cache/
+
+# Build outputs (if you add build process)
+build/
+public/
+
+# Large original images (keep optimized versions only)
+images/originals/
+*.psd
+*.ai
