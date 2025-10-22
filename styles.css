@@ -319,16 +319,18 @@ a {
     letter-spacing: 0.1em;
     margin-bottom: 40px;
 }
+
+/*
 .hero-logo::after {
-  content: ''; /* Necesario para que el pseudo-elemento se muestre */
-  display: block; /* Lo convierte en un bloque */
-  width: 400px;  /* Ajusta el ANCHO de la línea aquí */
-  height: 2px;   /* Ajusta el GROSOR de la línea aquí */
-  background-color: white; /* El COLOR de la línea */
+  content: ''; 
+  display: block;
+  width: 400px;  
+  height: 2px;  
+  background-color: white; 
   
-  /* Centra la línea y añade espacio */
-  margin: -30px auto 0; /* 15px de espacio arriba, 'auto' la centra, 0 abajo */
-}
+  margin: -30px auto 0; 
+} */
+
 
 .hero-chef {
     font-size: 20px;
