@@ -319,6 +319,16 @@ a {
     letter-spacing: 0.1em;
     margin-bottom: 40px;
 }
+.hero-logo::after {
+  content: ''; /* Necesario para que el pseudo-elemento se muestre */
+  display: block; /* Lo convierte en un bloque */
+  width: 400px;  /* Ajusta el ANCHO de la línea aquí */
+  height: 2px;   /* Ajusta el GROSOR de la línea aquí */
+  background-color: white; /* El COLOR de la línea */
+  
+  /* Centra la línea y añade espacio */
+  margin: -30px auto 0; /* 15px de espacio arriba, 'auto' la centra, 0 abajo */
+}
 
 .hero-chef {
     font-size: 20px;
@@ -503,6 +513,7 @@ a {
 }
 
 .chef-photo {
+    padding-top: 30%;
     width: 100%;
 }
 
@@ -511,8 +522,8 @@ a {
     height: 100%;
     aspect-ratio: 3/4;
     object-fit: cover;
-    border-radius: 4px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+    border-radius: 20px;
+    box-shadow: 0 10px 60px rgba(105, 105, 105, 0.8);
     transition: all 0.4s var(--transition-smooth);
 }
 
