@@ -141,7 +141,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Observe individual elements within sections for staggered animations
-    const filosofiaImages = document.querySelectorAll('.filosofia-images .image-placeholder');
+    
+    // MODIFICADO: Selector cambiado de '.image-placeholder' a '.filosofia-img'
+    const filosofiaImages = document.querySelectorAll('.filosofia-img'); 
+    
     filosofiaImages.forEach((img, index) => {
         img.style.opacity = '0';
         img.style.transform = 'translateY(30px)';
@@ -355,7 +358,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // CONSOLE WELCOME MESSAGE
     // ============================================
     console.log('%cŌmha Restaurant', 'font-size: 24px; font-weight: bold; color: #C9A961;');
-    console.log('%c2x Michelin Award Chef Ángel Soto', 'font-size: 14px; color: #C0C0C0;');
+    
+    // MODIFICADO: Mensaje actualizado al chef correcto
+    console.log('%cChef Erick Sáenz | 8 Años en Michelin', 'font-size: 14px; color: #C0C0C0;');
+    
     console.log('%cWebsite built with precision and elegance', 'font-size: 12px; color: #8B7355;');
 
     // ============================================

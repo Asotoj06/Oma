@@ -20,9 +20,36 @@
     /* Typography */
     --font-serif: 'Cormorant Garamond', serif;
     --font-sans: 'Inter', sans-serif;
+    --font-body: 'Tenor Sans', sans-serif;
 
     /* Timing */
     --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+/* ============================================
+   TRANSICIONES DE SECCIÓN SUAVIZADAS
+   ============================================ */
+
+/* 1. Sección Filosofía (Gris -> Negro) */
+.filosofia-section {
+    box-shadow: inset 0 -70px 50px -40px var(--black-primary);
+    /* Sombra interna (inset), solo en la parte inferior (-70px), 
+       con un difuminado (50px) y un tamaño (-40px) del color NEGRO */
+}
+
+/* 2. Sección Chef (Negro -> Gris -> Negro) */
+.chef-section {
+    /* box-shadow: inset 0 70px 50px -40px var(--charcoal-dark); Sombra GRIS superior */
+                
+}
+
+/* 3. Sección Contacto (Gris -> Negro -> Negro) */
+.contacto-section {
+    /* Esta sección viene del negro (chef) y va al negro (footer),
+       por lo que ambas sombras deben ser negras */
+    box-shadow: inset 0 70px 50px -40px var(--black-primary), /* Sombra NEGRA superior */
+                inset 0 -70px 50px -40px var(--black-primary); /* Sombra NEGRA inferior */
 }
 
 /* ============================================
@@ -94,6 +121,8 @@ h3 {
 }
 
 p {
+    font-family: var(--font-body);
+    font-weight: 400;
     font-size: 18px;
     line-height: 1.7;
 }
@@ -317,17 +346,18 @@ a {
     font-weight: 300;
     color: var(--platinum);
     letter-spacing: 0.1em;
-    margin-bottom: 40px;
+    margin-bottom: 24px; 
 }
 .hero-logo::after {
-  content: ''; /* Necesario para que el pseudo-elemento se muestre */
-  display: block; /* Lo convierte en un bloque */
-  width: 400px;  /* Ajusta el ANCHO de la línea aquí */
-  height: 2px;   /* Ajusta el GROSOR de la línea aquí */
-  background-color: white; /* El COLOR de la línea */
+  content: '';
+  display: block;
+  width: 350px;  
+  height: 2px;   
+  background-color:white; 
+  opacity: 0.9; 
   
-  /* Centra la línea y añade espacio */
-  margin: -30px auto 0; /* 15px de espacio arriba, 'auto' la centra, 0 abajo */
+  /* MODIFICADO: Reducido el margen inferior */
+  margin: 0 auto 24px; 
 }
 
 .hero-chef {
@@ -337,7 +367,18 @@ a {
     color: var(--warm-silver);
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    margin-bottom: 16px;
+    
+    /* MODIFICADO: Aumentado para dar espacio antes del botón */
+    margin-bottom: 60px; 
+}
+
+.hero-sushi {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--warm-silver);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 20px;
 }
 
 .hero-award {
@@ -355,7 +396,9 @@ a {
     font-weight: 300;
     color: var(--platinum);
     letter-spacing: 0.08em;
-    margin-bottom: 60px;
+    
+    /* MODIFICADO: Ya no necesita el margen inferior */
+    margin-bottom: 0; 
 }
 
 /* CTA Button */
@@ -440,7 +483,7 @@ a {
    ============================================ */
 .filosofia-section {
     background-color: var(--charcoal-dark);
-    padding: 120px 15%;
+    padding: 120px 120px 15%;
 }
 
 .filosofia-text {
@@ -744,6 +787,10 @@ a {
 
     .hero-chef {
         font-size: 16px;
+        /* Aseguramos que el texto se divida si es muy largo */
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .hero-award {
@@ -870,4 +917,92 @@ button:focus {
         background: white;
         color: black;
     }
+}
+
+/* ============================================
+   REFINAMIENTOS DE ESTILO (AÑADIDOS)
+   ============================================ */
+
+/* 1. Estilos de la Tagline en Hero (REEMPLAZA A .hero-preamble) */
+.hero-tagline {
+    font-family: var(--font-sans);
+    font-size: 20px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.2em; /* Más espaciado */
+    color: var(--metallic-gold); /* Usamos el color de acento */
+    opacity: 1;
+    margin-bottom: 24px; 
+}
+
+
+/* 2. Efecto Hover en Navegación */
+.nav-links a,
+.mobile-link {
+    position: relative;
+    padding-bottom: 4px; /* Deja espacio para la línea */
+}
+
+.nav-links a::after,
+.mobile-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0; /* Lo posiciona abajo */
+    left: 50%; /* Lo centra */
+    transform: translateX(-50%);
+    width: 0; /* Inicia con ancho 0 */
+    height: 1px;
+    background-color: var(--metallic-gold);
+    transition: width 0.3s var(--transition-smooth);
+}
+
+.nav-links a:hover::after,
+.mobile-link:hover::after {
+    width: 100%; /* Expande la línea al 100% */
+}
+
+.nav-separator {
+    pointer-events: none; /* Evita que el separador '|' tenga el efecto */
+}
+
+/* ============================================
+   ESTILOS DEL MAPA DE CONTACTO
+   ============================================ */
+
+/* Contenedor para el mapa */
+.map-wrapper {
+    max-width: 900px; /* Límite de ancho para el mapa */
+    margin: 24px auto;  /* Centrado y con espacio vertical */
+    border-radius: 4px; /* Bordes suaves */
+    overflow: hidden;   /* Asegura que el iframe respete el radius */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
+    transition: all 0.4s var(--transition-smooth);
+}
+
+.contact-map {
+    /* Estilo base del iframe */
+    width: 100%;
+    height: 550px; /* Puedes ajustar esta altura */
+    border: none;  /* Quita el borde por defecto */
+    display: block;/* Elimina espacio en blanco inferior */
+
+    /* --- El truco para el tema oscuro --- */
+    filter: grayscale(100%) invert(90%) brightness(1.1);
+    
+    transition: all 0.4s var(--transition-smooth);
+}
+
+/* Efecto hover para darle vida */
+.map-wrapper:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.9);
+}
+
+.map-wrapper:hover .contact-map {
+    filter: none; /* Muestra colores originales al pasar el ratón */
+}
+
+/* Ajuste de margen para el texto de la dirección */
+.contact-info .restaurant-name {
+    margin-top: 24px; /* Añade espacio después del mapa */
 }
