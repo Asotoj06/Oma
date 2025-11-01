@@ -348,6 +348,8 @@ a {
     letter-spacing: 0.1em;
     margin-bottom: 24px; 
 }
+
+
 .hero-logo::after {
   content: '';
   display: block;
