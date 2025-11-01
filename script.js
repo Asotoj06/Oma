@@ -406,4 +406,4 @@ function throttle(func, limit) {
             setTimeout(() => inThrottle = false, limit);
         }
     };
-}
+}  
