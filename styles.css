@@ -460,13 +460,13 @@ a {
 .hero-logo::after {
     content: '';
     display: block;
-    width: 350px; 
-    height: 2px;
+    width: 350px;  
+    height: 1px;   
     background-color:white; 
     opacity: 0.9; 
-
-     /* Ajusta el margen inferior (el último valor) según sea necesario */
-    margin: 12px auto 15px; /* Ejemplo: reducido a 15px */
+    
+    /* MODIFICADO: Reducido el margen inferior */
+    margin: -20px auto 40px;
 }
 
 .hero-chef {
@@ -482,7 +482,7 @@ a {
 }
 
 .hero-sushi {
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 600;
     /* color: var(--warm-silver); */
     color: #FFFFFF;
@@ -1038,11 +1038,11 @@ button:focus {
 /* 1. Estilos de la Tagline en Hero (REEMPLAZA A .hero-preamble) */
 .hero-tagline {
     font-family: var(--font-sans);
-    font-size: 20px;
-    font-weight: 400;
+    font-size: 15px;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.2em;
-    color: var(--metallic-gold);
+    color: #FFFFFF;
     opacity: 1;
     /* Ajusta el margen superior según sea necesario */
     margin-top: 20px; /* Ejemplo: reducido a 20px */
