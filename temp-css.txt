@@ -1,0 +1,13 @@
+.social-icon-img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    display: block;
+    filter: brightness(0) saturate(100%) invert(78%) sepia(6%) saturate(150%) hue-rotate(169deg) brightness(95%) contrast(86%);
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.social-link:hover .social-icon-img {
+    filter: brightness(0) saturate(100%) invert(66%) sepia(65%) saturate(432%) hue-rotate(357deg) brightness(91%) contrast(90%);
+    transform: scale(1.1);
+}
